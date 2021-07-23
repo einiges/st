@@ -120,6 +120,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
+	"#2e3440",
 };
 
 
@@ -131,6 +132,14 @@ unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
+static unsigned int defaultselectionfg = 7;
+static unsigned int defaultselectionbg = 257;
+
+/*
+ * If 0 use defaultselectionfg as foreground in order to have a uniform foreground-color
+ * Otherwise keep original foreground-color of each cell
+ */
+static int selectionuseglyphfg = 1;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
