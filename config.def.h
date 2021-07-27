@@ -63,9 +63,9 @@ static double maxlatency = 33;
 static unsigned int blinktimeout = 800;
 
 /*
- * thickness of underline and bar cursors
+ * thickness of underline and bar cursors in percent relative to char height
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 15;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling

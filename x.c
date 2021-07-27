@@ -1658,8 +1658,9 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og, Line line, int le
 			XftDrawRect(xw.draw, &drawcol,
 					borderpx + cx * win.cw,
 					borderpx + (cy + 1) * win.ch - \
-						cursorthickness,
-					win.cw, cursorthickness);
+						ceil(win.ch * cursorthickness / 100),
+					win.cw,
+					ceil(win.ch * cursorthickness / 100));
 			break;
 		case 5: /* Blinking bar */
 			if (IS_SET(MODE_BLINK))
@@ -1669,7 +1670,8 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og, Line line, int le
 			XftDrawRect(xw.draw, &drawcol,
 					borderpx + cx * win.cw,
 					borderpx + cy * win.ch,
-					cursorthickness, win.ch);
+					ceil(win.ch * cursorthickness / 100),
+					win.ch);
 			break;
 		case 7: /* Blinking st cursor */
 			if (IS_SET(MODE_BLINK))
